@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://JnchinZ.github.io">
-  <title>essay | Jnchin</title>
+  <title>机器学习之实现一个简单的神经网络 | Jnchin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo gener">
-<meta property="og:type" content="website">
-<meta property="og:title" content="essay">
-<meta property="og:url" content="http://JnchinZ.github.io/essay/index.html">
+  <meta name="description" content="机器学习的本质是模拟人的神经元对信息的处理方法。可以将神经元看成是一个简单的带有二进制输出功能的逻辑电路门，多种电信号可以从神经元的树突部分传入，然后对多个传入的电信号进行结合，统一地运算，得到的唯一的电信号会通过神经元的轴突–&amp;gt;神经末梢传递给其他神经元的树突。">
+<meta name="keywords" content="ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习之实现一个简单的神经网络">
+<meta property="og:url" content="http://JnchinZ.github.io/2017/08/02/机器学习之实现简单的神经网络/index.html">
 <meta property="og:site_name" content="Jnchin">
-<meta property="og:description" content="Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$">
-<meta property="og:updated_time" content="2017-12-04T10:08:02.083Z">
+<meta property="og:description" content="机器学习的本质是模拟人的神经元对信息的处理方法。可以将神经元看成是一个简单的带有二进制输出功能的逻辑电路门，多种电信号可以从神经元的树突部分传入，然后对多个传入的电信号进行结合，统一地运算，得到的唯一的电信号会通过神经元的轴突–&amp;gt;神经末梢传递给其他神经元的树突。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170802180020812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170803085831247?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170803090223381?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170803093635642?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-12-04T14:45:50.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="essay">
-<meta name="twitter:description" content="Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$">
+<meta name="twitter:title" content="机器学习之实现一个简单的神经网络">
+<meta name="twitter:description" content="机器学习的本质是模拟人的神经元对信息的处理方法。可以将神经元看成是一个简单的带有二进制输出功能的逻辑电路门，多种电信号可以从神经元的树突部分传入，然后对多个传入的电信号进行结合，统一地运算，得到的唯一的电信号会通过神经元的轴突–&amp;gt;神经末梢传递给其他神经元的树突。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170802180020812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="Jnchin" type="application/atom+xml">
   
@@ -169,38 +175,106 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-机器学习之实现简单的神经网络" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      essay
+      机器学习之实现一个简单的神经网络
     </h1>
   
 
         
-        <a href="/essay/index.html" class="archive-article-date">
-  	<time datetime="2017-12-04T09:27:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
+        <a href="/2017/08/02/机器学习之实现简单的神经网络/" class="archive-article-date">
+  	<time datetime="2017-08-02T09:58:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h3 id="一般完整格式如下："><a href="#一般完整格式如下：" class="headerlink" title="一般完整格式如下："></a>一般完整格式如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: postName <span class="comment">#文章页面上的显示名称，一般是中文</span></span><br><span class="line">date: 2013-12-02 15:30:16 <span class="comment">#文章生成时间，一般不改，当然也可以任意修改</span></span><br><span class="line">categories: 默认分类 <span class="comment">#分类</span></span><br><span class="line">tags: [tag1,tag2,tag3] <span class="comment">#文章标签，可空，多标签请用格式，注意:后面有个空格</span></span><br><span class="line">description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">以下是正文</span><br></pre></td></tr></table></figure>
-<h3 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></span><br><span class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></span><br><span class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></span><br><span class="line">hexo deploy <span class="comment">#部署到GitHub</span></span><br><span class="line">hexo <span class="built_in">help</span>  <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version  <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
-<h3 id="缩写："><a href="#缩写：" class="headerlink" title="缩写："></a>缩写：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
-<h3 id="组合命令："><a href="#组合命令：" class="headerlink" title="组合命令："></a>组合命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s -g <span class="comment">#生成并本地预览</span></span><br><span class="line">hexo d -g <span class="comment">#生成并上传</span></span><br></pre></td></tr></table></figure>
+        <p>机器学习的本质是模拟人的神经元对信息的处理方法。可以将神经元看成是一个简单的带有二进制输出功能的逻辑电路门，多种电信号可以从神经元的树突部分传入，然后对多个传入的电信号进行结合，统一地运算，得到的唯一的电信号会通过神经元的轴突–&gt;神经末梢传递给其他神经元的树突。<br><img src="http://img.blog.csdn.net/20170802180020812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="人工神经元"></p>
+<a id="more"></a>
+<p>在机器学习中对数据的分类算法有两种：</p>
+<ul>
+<li>感知器</li>
+<li>适应性线性神经元</li>
+</ul>
+<h2 id="1、神经元的数学表示"><a href="#1、神经元的数学表示" class="headerlink" title="1、神经元的数学表示"></a>1、神经元的数学表示</h2><p>设：$x =  \left[<br> \begin{matrix}<br>   x_1 \<br>   \vdots \<br>   x_m<br>  \end{matrix}<br>  \right]$ 为树突接受的多种电信号，$w =  \left[<br> \begin{matrix}<br>   w_1 \<br>   \vdots \<br>   w_m<br>  \end{matrix}<br>  \right]$为 $x$ 的运算系数。</p>
+<p>则神经元会进行以下算法步骤：<br>第一步，将神经元将接收到的信号 $x$ 进行整合处理：</p>
+<blockquote>
+<p>$$z = w_1x_1+\cdots+w_mx_m$$</p>
+</blockquote>
+<p>第二步，用激活函数对 $z$ 进行处理，例如下面的步调函数：</p>
+<blockquote>
+<p>$$\phi(z)= \begin{cases}    1 &amp;\mbox{if $z≥\theta$}\    -1 &amp;\mbox{if<br>$otherwise$}    \end{cases}$$</p>
+</blockquote>
+<h2 id="2、感知器"><a href="#2、感知器" class="headerlink" title="2、感知器"></a>2、感知器</h2><p>我们把 $w$ 称为权重向量，$x$ 称为训练样本。</p>
+<p>感知器数据分类的算法步骤如下：</p>
+<ol>
+<li>把 $w$ 初始化为 0，或者把 $w$ 的每个分量初始化为[0, 1]之间的任意小数；</li>
+<li>把训练样本 $x$ 输入感知器，得到分类结果 $\phi(z)$ （-1或1）；</li>
+<li>根据分类结果更新权重向量。</li>
+</ol>
+<p>接下来我们对每个步骤进行详细的解说。</p>
+<p><strong>步调函数和阈值的概念：</strong><br>感知器中的算法如下：</p>
+<blockquote>
+<p>$$z = w_0x_0+w_1x_1+\cdots+w_mx_m$$ and<br>$$\phi(z)= \begin{cases}<br>   1 &amp;\mbox{if $z≥\theta$}\<br>   -1 &amp;\mbox{if $otherwise$}<br>   \end{cases}$$</p>
+</blockquote>
+<p>其中 $\phi(z)$ 是一个步调函数，在感知器中作为激活函数使用； $\theta$ 为阈值。</p>
+<p>这时，我们令$w_0 = -\theta$ and $x_0 = 1$，即对阈值的初始化。</p>
+<p><strong>权重更新算法：</strong></p>
+<blockquote>
+<p>$$w_j=w_j+\nabla w_j$$ $$\nabla w_j=\eta <em> (y-y’)</em>x_j$$</p>
+</blockquote>
+<ul>
+<li>$\eta$ 表示学习率，是一个 [0, 1] 之间的小数；</li>
+<li>y 是输入样本的正确分类，y’ 是感知器计算出来的分类。</li>
+</ul>
+<p>下面我们通过一个例子来更清楚的了解权重更新算法以及感知器的运行机理：<br>设：<br>$w = [0, 0, 0]$，$x = [1, 2, 3]$，$\eta = 0.3$，$y = 1$，$y’ = -1$<br>则根据上面的算法：<br>$\nabla w_0 = 0.3<em>(1-(-1))</em>x_0 = 0.3<em>2</em>1 = 0.6$；<br>$w_0 = w_0+\nabla w_0 = 0.6$；<br>同理，计算其他分量：<br>$\nabla w_1 = 0.3<em>(1-(-1))</em>x_1 = 0.3<em>2</em>2 = 1.2$；<br>$w_1 = w_1+\nabla w_1 = 1.2$；<br>$\nabla w_2 = 0.3<em>(1-(-1))</em>x_2 = 0.3<em>2</em>3 = 1.8$；<br>$w_2 = w_2+\nabla w_2 = 1.8$；</p>
+<p>最后，更新后的权重向量为 $w = [0.6, 1.2, 1.8]$</p>
+<p><strong>阈值的更新：</strong><br>阈值并不是一成不变的，初次的阈值可以人为制定，以后会不断的自动更新。<br>阈值更新如下：</p>
+<blockquote>
+<p>$w_0 = 0$，$\nabla w_0=\eta * (y-y’)$</p>
+<p>$y = 1$，$y’ = -1$</p>
+<p>$w_0=w_0+\nabla w_0=0+0.3*(1-(-1))=0.6$</p>
+</blockquote>
+<p>最后，我们对感知器的算法做一下总结，如下图：</p>
+<p><img src="http://img.blog.csdn.net/20170803085831247?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="算法步骤总结"></p>
+<h2 id="3、适应性线性神经元"><a href="#3、适应性线性神经元" class="headerlink" title="3、适应性线性神经元"></a>3、适应性线性神经元</h2><p><img src="http://img.blog.csdn.net/20170803090223381?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="自适应线性神经元"></p>
+<p> 如图，适应性线性神经元与感知器的区别有二：</p>
+<ul>
+<li><p>适应性线性神经元会将计算结果与给定的标准结果进行比较，如果出现Error，则会根据两者的差距进行动态的调整神经元的参数 $w_i$，使得与给定的标准结果的差距越来越小。</p>
+</li>
+<li><p>两者的激活函数（Activation function）不一样；感知器的激活函数是一个步调函数，而自适应性先行神经元使用的激活函数是将 $x$ 与 $w$ 的点积 $z$ 直接当作最终结果，即：$\phi(z)=z$ 。</p>
+</li>
+</ul>
+<p>那么适应线性神经元是如何动态的调整神经元的参数 $w_i$ 的呢？<br>适应线性神经元会使用一种渐进下降的算法来不断的缩短计算结果与标准结果之间的距离。</p>
+<p>这里我们要引进一下“距离”的定义：</p>
+<blockquote>
+<p>$$J(w) = { \frac{1}{2} }\sum _i{(y^{(i)}-\phi(z^{(i)}))^2}$$</p>
+</blockquote>
+<p>其中$$z =w_0x_0+w_1x_1+\cdots+w_mx_m = w^Tx$$<br>$$\phi(z)=z$$<br>（$w^T$ 是<a href="https://baike.baidu.com/item/%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE/4150715?fr=aladdin" target="_blank" rel="noopener">矩阵的转置</a>，即行列互换）</p>
+<p>上面是一个和方差公式，和方差的数学函数图像如下：<br><img src="http://img.blog.csdn.net/20170803093635642?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzgyMzcyMTQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="渐进下降法"><br>根据上图，我们目的是求当距离最小时的状态，即 $J(w)$ 的最小值，我们可以对上图的函数进行求偏导数，当导数为0时即距离的最小值时的状态。所以自适应线性神经元在进行动态调整参数时，当导数小于零时，可以动态的增大 $w_j$ 的值，反之当导数大于零的时，就会动态的减小$w_j$ 的值。</p>
+<p>和方差求导如下：</p>
+<blockquote>
+<p>$\frac{\partial J}{\partial w_j}= \frac{\partial }{\partial w_j}{<br>\frac{1}{2} }\sum _i{(y^{(i)}-\phi(z^{(i)}))^2}$</p>
+<p>$={ \frac{1}{2} }\frac{\partial }{\partial w_j}\sum<br>_i{(y^{(i)}-\phi(z^{(i)}))^2}$</p>
+<p>$= \frac{1}{2}{\sum _i 2{(y^{(i)}-\phi(z^{(i)})) }\frac{\partial<br>}{\partial w_j}}{(y^{(i)}-\phi(z^{(i)})}$</p>
+<p>$={\sum _i {(y^{(i)}-\phi(z^{(i)}))}} \frac{\partial }{\partial<br>w_j}[{(y^{(i)}-\sum _i w_j^{(i)}x_j^{(i)}}]$</p>
+<p>$={\sum _i {(y^{(i)}-\phi(z^{(i)}))}} (-x_j^{(i)})$</p>
+<p>$=-{\sum _i {(y^{(i)}-\phi(z^{(i)}))}} x_j^{(i)}$</p>
+</blockquote>
+<p>有了导数之后，我们就要对神经元的参数 $w_j$ 进行更新：</p>
+<blockquote>
+<p>$$w:=w+\Delta w$$<br>其中<br>$$\Delta w_j = - \eta \frac{\partial J}{\partial w_j} = \mu {\sum _i {(y^{(i)}-\phi(z^{(i)}))}} x_j^{(i)}$$</p>
+</blockquote>
+<p>我们通过这种方式不断的调整神经元的每一个参数，这样会使得整体神元上的和方差的值不断地趋于最小，这样一来，神经网络的计算误差就会越来越小，计算结果就会越来越精确，神经网络对数据的预测的准确率就会越来越高。</p>
+<hr>
+<p>学习课程来自：<a href="http://www.imooc.com/learn/813" target="_blank" rel="noopener">慕课网【机器学习-实现简单神经网络】</a></p>
+
       
 
       
@@ -229,7 +303,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Machine-Learning//" class="article-tag-list-link color2">Machine Learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -279,7 +375,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://JnchinZ.github.io/essay/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://JnchinZ.github.io/2017/08/02/机器学习之实现简单的神经网络/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,6 +387,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/23/逻辑程序设计语言Prolog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">逻辑程序设计语言Prolog</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -341,7 +447,7 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
