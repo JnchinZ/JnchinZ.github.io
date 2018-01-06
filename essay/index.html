@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://JnchinZ.github.io/essay/index.html">
 <meta property="og:site_name" content="Jnchin">
 <meta property="og:description" content="快速写博客这是之前创建的个人主页，不经常写，所以可能会忘记什么操作细节之类的，在此小记一下。其他具体的操作借鉴这篇博客使用hexo+github搭建免费个人博客详细教程，写的真心不错。 创建一篇博客在本机的个人主页工作区间根目录（我的是D:\my_page）下右键“Git Bash Here”，输入： 1$ hexo new &quot;My New Post&quot; 即可在 D:\my_page\source_">
-<meta property="og:updated_time" content="2018-01-06T08:57:00.261Z">
+<meta property="og:updated_time" content="2018-01-06T09:05:46.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="随笔">
 <meta name="twitter:description" content="快速写博客这是之前创建的个人主页，不经常写，所以可能会忘记什么操作细节之类的，在此小记一下。其他具体的操作借鉴这篇博客使用hexo+github搭建免费个人博客详细教程，写的真心不错。 创建一篇博客在本机的个人主页工作区间根目录（我的是D:\my_page）下右键“Git Bash Here”，输入： 1$ hexo new &quot;My New Post&quot; 即可在 D:\my_page\source_">
@@ -197,11 +197,9 @@
 <p>还有一个命令是：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"my-second-blog"</span></span><br></pre></td></tr></table></figure>
 <p>这和上面那个命令有什么区别呢？<br>区别就是<code>$ hexo new page ‘my-second-blog’</code> 命令会在<code>D:\my_page\source\</code>目录下创建一个<code>my-second-blog</code>文件夹，里面有一个<code>index.html</code>文件，最终部署时生成：<code>hexo\public\my-second-blog\index.html</code>，但是它不会作为文章出现在博文目录，你现在看的这篇文章就是这么写的。</p>
-<p>###书写博客</p>
-<p>写博客的工具就是写.md的工具，这里就不介绍了。<br>书写博客时需要注意的一点是默认情况下，生成的博文目录会显示全部的文章内容，这样看着很难看，那么如何设置文章摘要的长度呢？</p>
-<p>答案是在合适的位置加上    ‘<a id="more"></a>‘    即可，在哪加的就在哪停止显示文章内容。</p>
-<p>###上传博客</p>
-<p>两条命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<h3 id="书写博客"><a href="#书写博客" class="headerlink" title="书写博客"></a>书写博客</h3><p>写博客的工具就是写.md的工具，这里就不介绍了。<br>书写博客时需要注意的一点是默认情况下，生成的博文目录会显示全部的文章内容，这样看着很难看，那么如何设置文章摘要的长度呢？</p>
+<p>答案是在合适的位置加上<code><a id="more"></a></code>即可，在哪加的就在哪停止显示文章内容。</p>
+<h3 id="上传博客"><a href="#上传博客" class="headerlink" title="上传博客"></a>上传博客</h3><p>两条命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
 <p>如果出现一些莫名其妙的问题，可以先执行<code>hexo clean</code>来清理一下public的内容，然后再来重新生成和发布。</p>
 <hr>
 <h3 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></span><br><span class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></span><br><span class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></span><br><span class="line">hexo deploy <span class="comment">#部署到GitHub</span></span><br><span class="line">hexo <span class="built_in">help</span>  <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version  <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
